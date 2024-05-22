@@ -38,9 +38,8 @@ public class GeoLocalizacionIpController {
 
     @Operation(summary = "Devuelve la distancia más larga a Buenos Aires de las IP's consultadas")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Información encontrada",
-                    content = {@Content(mediaType = "text/plain",
-                            schema = @Schema(implementation = String.class))}),
+            @ApiResponse(responseCode = "200", description = "Información encontrada"),
+            @ApiResponse(responseCode = "210", description = "No existe información en la base de datos")
     })
     @GetMapping("/larger-distance")
     public ResponseEntity<String> furthestDistance() {
@@ -49,9 +48,8 @@ public class GeoLocalizacionIpController {
 
     @Operation(summary = "Devuelve la distancia más corta a Buenos Aires de las IP's consultadas")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Información encontrada",
-                    content = {@Content(mediaType = "text/plain",
-                            schema = @Schema(implementation = String.class))}),
+            @ApiResponse(responseCode = "200", description = "Información encontrada"),
+            @ApiResponse(responseCode = "210", description = "No existe información en la base de datos")
     })
     @GetMapping("/closest-distance")
     public ResponseEntity<String> closestDistance() {
@@ -60,9 +58,8 @@ public class GeoLocalizacionIpController {
 
     @Operation(summary = "Devuelve la distancia promedio a Buenos Aires de todas las IP's consultadas")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Información encontrada",
-                    content = {@Content(mediaType = "text/plain",
-                            schema = @Schema(implementation = String.class))}),
+            @ApiResponse(responseCode = "200", description = "Información encontrada"),
+            @ApiResponse(responseCode = "210", description = "No existe información en la base de datos")
     })
     @GetMapping("/average-distance")
     public ResponseEntity<String> averageDistance() {
